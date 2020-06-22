@@ -1,6 +1,6 @@
 const express = require('express');
 const bountyRoute = express.Router();
-const {v4:uuid} =require('uuid');
+const uuid = require('uuid');
 
 
 const bounty = [
@@ -46,14 +46,13 @@ const bounty = [
     }
 ]
 
-// Routes
 bountyRoute.route("/")
     .get((req, res) => {
         res.send(bounty)
     })
     .post((req, res) => {
         const newBounty = req.body;
-        newBounty._ID = uuid();
+        newBounty._ID = uuid.v4();
         bounties.push(newBounty)
         res.send(`Added ${newBounty.firstName} ${newBounty.lastName} to the bounty list.`)
     });
