@@ -1,6 +1,6 @@
-const express = require('express');
-const bountyRoute = express.Router();
-const uuid = require('uuid');
+const express = require('express')
+const bountyRoute = express.Router()
+const {uuid} = require("uuidv4")
 
 
 const bounty = [
@@ -52,17 +52,17 @@ bountyRoute.route("/")
     })
     .post((req, res) => {
         const newBounty = req.body;
-        newBounty._ID = uuid.v4();
-        bounties.push(newBounty)
+        newBounty._ID = uuid();
+        bounty.push(newBounty)
         res.send(`Added ${newBounty.firstName} ${newBounty.lastName} to the bounty list.`)
     });
 
-bountyRoute.route("/:ID")
-    .get((req, res) => {
-        res.send(bounty.filter(req.params._ID))
-    })
-    .delete((req, res) => {
-        res.send(`DELETE on /bounty/${req.params._ID} endpoint`)
-    })
+// bountyRoute.route("/:ID")
+//     .get((req, res) => {
+//         res.send(bounty.filter(req.params._ID))
+//     })
+//     .delete((req, res) => {
+//         res.send(`DELETE on /bounty/${req.params._ID} endpoint`)
+//     })
 
 module.exports = bountyRoute
