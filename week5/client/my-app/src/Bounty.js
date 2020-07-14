@@ -21,22 +21,22 @@ function Bounty(props) {
 
 
     return (
-        <div style={{color: props.living === true ? "green" : "firebrick", fontStyle: props.living === true ? "bold" : "italic"}} className="bounty">
+        <div style={{color: props.living === true ? "Yellow" : "Blue"}} className="bounty">
             { !editToggle ?
                 <>
                 <h1>Name: {props.firstName} {props.lastName} </h1>
                 <p>Price: ${props.bountyAmount} </p>
-                <p>Status: {props.living ? "Alive" : "Terminated"} </p>
+                <p>Status: {props.living ? "Alive" : "Dead"} </p>
                 <p>Type: {props.type} </p>
                 <button className="bountyButton"
                     onClick={handleClick}>
-                        Change Status
+                    Change Status
                 </button>
                 <button className="deleteButton"
-                    onClick={() => props.deleteBounty(props._id)}>Delete Bounty</button>
+                    onClick={() => props.deleteBounty(props._id)}>Delete Bounty
+                </button>
                 <button className="bountyButton"
-                    onClick={() => setEditToggle(prevToggle => !prevToggle)}>
-                        Edit Bounty
+                    onClick={() => setEditToggle(prevToggle => !prevToggle)}>Edit Bounty
                 </button>
                 </>
             :
