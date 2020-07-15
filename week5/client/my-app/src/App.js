@@ -51,9 +51,9 @@ useEffect(() => {
 
   return (
     <div className="bountyContainer">
-      <img className="toystory" src="https://tse3.mm.bing.net/th?id=OIP.w5g4tz4Xn6qWPSNIiN4o2gHaFa&pid=Api&P=0&w=211&h=155" alt="toy story"/>
+      <img className="toystory" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Toy_Story_logo.svg/1200px-Toy_Story_logo.svg.png" alt="toy story"/>
       <h1 id="name">BOUNTIES</h1>
-      <img className="toys" src="https://tse2.mm.bing.net/th?id=OIP.MmQRUip5AhOWuUF51C34dAHaEK&pid=Api&P=0&w=278&h=157" alt="toy story"/>
+      <img className="toys" src="http://wallpapersdsc.net/wp-content/uploads/2015/11/913.jpg" alt="toy story"/>
       <AddBountyForm 
         submit={addBounty}
         buttonText="Add Bounty" />
